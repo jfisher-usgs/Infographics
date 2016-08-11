@@ -4,12 +4,6 @@
 
 ---
 
-### cens_gw_plume
-
-![](./img/cens_gw_plume.png)
-
----
-
 ### cens_javelin
 
 ![](./img/cens_javelin.png)
