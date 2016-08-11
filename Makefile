@@ -32,4 +32,4 @@ clean:
 	$(RM) -r $(DIR)/img;\
 	$(RM) $(DIR)/Gallery.md
 
-.PHONY: all convert build
+.PHONY: all convert build clean
