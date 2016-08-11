@@ -7,9 +7,9 @@
 #
 # Targets: run using 'make <target>'
 #
-#   'all'    converts images from './*.ai' to './img/*.png',
-#            creates './Gallery.md'
-#   'clean'  removes './img' folder and its contents,
+#   'all'    converts images from './*.ai' to './img/*.png'
+#            creates './Gallery.md' file
+#   'clean'  removes './img' folder and its contents
 #            removes './Gallery.md' file
 #
 

@@ -1,7 +1,6 @@
 #!/usr/bin/env Rscript
 
 BuildGallery <- function(path=".") {
-
   file.names <- list.files("./img", "*.png$")
   if (length(file.names) == 0) stop("no png images found")
   base.names <- tools::file_path_sans_ext(file.names)
