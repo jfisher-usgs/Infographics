@@ -12,7 +12,6 @@
 #   'clean'  removes './img' folder and its contents
 #            removes './Gallery.md' file
 #
-
 DIR := .
 DEN := 300
 OPT := -trim -quality 100 +set date:create +set date:modify
