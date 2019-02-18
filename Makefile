@@ -5,18 +5,12 @@
 #   install R https://www.r-project.org/
 #   edit system PATH for command line access
 #
-# Targets: run using 'make <target>'
-#
-#   'all'    converts images from './*.ai' to './img/*.png'
-#            creates './Gallery.md' file
-#   'clean'  removes './img' folder and its contents
-#            removes './Gallery.md' file
-#
+
 DIR := .
 DEN := 300
 OPT := -trim -quality 100 +set date:create +set date:modify
 
-all: convert build
+all: convert render clean
 
 convert:
 	mkdir -p img;\
@@ -24,11 +18,11 @@ convert:
 		gm convert -density $(DEN) $$file $(OPT) $(DIR)/img/`basename --suffix=.ai $$file`.png;\
 	done
 
-build:
-	Rscript $(DIR)/BuildGallery
+render:
+	Rscript $(DIR)/RenderGallery.R;\
 
 clean:
 	$(RM) -r $(DIR)/img;\
-	$(RM) $(DIR)/Gallery.md
+	$(RM) $(DIR)/index.Rmd;\
 
-.PHONY: all convert build clean
+.PHONY: all convert render clean

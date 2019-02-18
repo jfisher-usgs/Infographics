@@ -1,6 +1,7 @@
 # Infographics
 
-See image gallery [here](Gallery.md)
+Gallery in [HTML](https://jfisher-usgs.github.io/Infographics) format.
+
 
 These illustrations were created many years ago and for various projects.
 My design inexperience during this time shows in my inability to organize with layers.
