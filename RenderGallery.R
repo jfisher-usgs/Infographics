@@ -7,19 +7,22 @@ RenderGallery <- function(path=".") {
   x <- gsub("_", " ", x)
   x <- gsub("\\b([[:lower:]])([[:lower:]]+)", "\\U\\1\\L\\2", x, perl=TRUE)
   base.names <- x
-
-  con <- file(file.path(path, "index.Rmd"))
-  on.exit(close(con))
-
+  meta <- c("---",
+            "title: Infographics",
+            "author: Jason C. Fisher",
+            "output:",
+            "  html_document:",
+            "    toc: true",
+            "    toc_float: true",
+            "    mathjax: null",
+            "---\n")
   fmt <- "### %s\n\n![](./img/%s)\n\n---\n"
   s <- vapply(seq_along(file.names), function(i) {
     sprintf(fmt, base.names[i], file.names[i])
   }, "")
-  cat("---\nlayout: page\ntitle: Infographics\n---\n", s,
-      file=con, sep="\n")
-
-  rmarkdown::render("index.Rmd", "html_document")
-
+  con <- file(file.path(path, "index.Rmd")); on.exit(close(con))
+  cat(meta, s, file=con, sep="\n")
+  rmarkdown::render("index.Rmd")
   invisible(NULL)
 }
 
