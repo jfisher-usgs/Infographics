@@ -1,6 +1,6 @@
 # Infographics
 
-Gallery in [HTML](https://jfisher-usgs.github.io/Infographics) format.
+Gallery in [HTML](https://jfisher-usgs.github.io/Infographics/index.html) format.
 
 
 These illustrations were created many years ago and for various projects.
