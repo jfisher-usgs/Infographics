@@ -16,9 +16,8 @@ RenderGallery <- function(path=".") {
             "    toc_float: true",
             "    mathjax: null",
             "---\n")
-  fmt <- "### %s\n\n![](./img/%s)\n\n---\n"
   s <- vapply(seq_along(file.names), function(i) {
-    sprintf(fmt, base.names[i], file.names[i])
+    sprintf("### %s\n\n![](./img/%s)\n\n---\n", base.names[i], file.names[i])
   }, "")
   con <- file(file.path(path, "index.Rmd")); on.exit(close(con))
   cat(meta, s, file=con, sep="\n")
